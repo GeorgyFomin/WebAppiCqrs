@@ -21,10 +21,12 @@ namespace WebAppiCqrs.Features.Books
             var createBookId = await _mediator.Send(command);
             return CreatedAtAction(nameof(GetBook), new { id = createBookId }, null);
         }
-        //public async Task<ActionResult> DeleteBook(int id)
-        //{
-        //    await _mediator.Send(new DeleteBook.Command { Id = id });
-        //    return NoContent();
-        //}
+
+        [HttpDelete]
+        public async Task<ActionResult> DeleteBook(int id)
+        {
+            await _mediator.Send(new DeleteBook.Command { Id = id });
+            return NoContent();
+        }
     }
 }

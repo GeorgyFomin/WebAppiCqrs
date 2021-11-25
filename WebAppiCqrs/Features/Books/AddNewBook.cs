@@ -6,9 +6,9 @@ namespace WebAppiCqrs.Features.Books
 {
     public class AddNewBook
     {
-        public class Command:IRequest<int>
+        public class Command : IRequest<int>
         {
-            public string Title { get; set;             }
+            public string Title { get; set; }
             public string Author { get; set; }
             public string Description { get; set; }
         }
